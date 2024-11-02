@@ -41,8 +41,9 @@ public class SecurityConfig {
             .authorizeHttpRequests((authorize)-> authorize
                     //.requestMatchers("api/auth/**").permitAll() // (*) permite el primer nivel después de /, (**) permite todos los niveles
                     .requestMatchers("/api/auth/**").permitAll()
-                    .requestMatchers("/api/users/**").hasAnyRole("leader", "member")
+                    //.requestMatchers("/api/users/**").hasAnyRole("leader", "member")
                     .requestMatchers(HttpMethod.GET, "/api/**").hasRole("admin")
+                    .requestMatchers(HttpMethod.POST, "/api/**").hasRole("admin")
                     .anyRequest()
                     .authenticated()
 

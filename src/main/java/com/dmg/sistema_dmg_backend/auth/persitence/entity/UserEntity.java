@@ -37,10 +37,10 @@ public class UserEntity {
 
     private String perfil;
 
-    @Column(nullable = false, columnDefinition = "SMALLINT")
+    @Column(nullable = false)
     private Boolean locked;
 
-    @Column(nullable = false, columnDefinition = "SMALLINT")
+    @Column(nullable = false)
     private Boolean disabled;
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
@@ -51,4 +51,5 @@ public class UserEntity {
             uniqueConstraints = @UniqueConstraint(columnNames = {"user_id", "role_id"})
     )
     private Set<RoleEntity> roles = new HashSet<>();
+
 }
