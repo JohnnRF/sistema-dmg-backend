@@ -14,7 +14,7 @@ public class CorsConfig {
     CorsConfigurationSource corsConfigurationSource(){
         CorsConfiguration corsConfiguration = new CorsConfiguration();
 
-        corsConfiguration.setAllowedOrigins(Arrays.asList("http://127.0.0.1:5501"));
+        corsConfiguration.setAllowedOrigins(Arrays.asList("http://localhost:4200"));
         corsConfiguration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE")); //Métodos que quiero que se consuman desde CORS
         corsConfiguration.setAllowedHeaders(Arrays.asList("*")); //Tódos los encabezados que vengan através de CORS
 

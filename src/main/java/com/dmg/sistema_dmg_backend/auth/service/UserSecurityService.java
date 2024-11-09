@@ -45,12 +45,14 @@ public class UserSecurityService implements UserDetailsService {
                 .build();
     }
 
+    /*
     private  String[] getAuthorities(String role){
         if ("admin".equals(role) || "leader".equals(role)){
             return new String[] {"manage_users"};
         }
         return new String[]{};
     }
+    */
 
     private List<GrantedAuthority> grantedAuthorities(String[] roles){
         List<GrantedAuthority> authorities = new ArrayList<>(roles.length);
